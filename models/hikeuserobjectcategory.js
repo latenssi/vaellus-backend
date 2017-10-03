@@ -5,7 +5,7 @@ module.exports = (queryInterface, Sequelize) =>
     categoryId: {
       type: Sequelize.INTEGER,
       references: {
-        model: queryInterface.import("./ObjectSubCategory"),
+        model: queryInterface.import("./objectsubcategory"),
         key: "id"
       },
       allowNull: false
@@ -13,7 +13,7 @@ module.exports = (queryInterface, Sequelize) =>
     hikeuserId: {
       type: Sequelize.INTEGER,
       references: {
-        model: queryInterface.import("./HikeUser"),
+        model: queryInterface.import("./hikeuser"),
         key: "id"
       },
       allowNull: false

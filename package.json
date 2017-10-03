@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "mocha": "./node_modules/mocha/bin/mocha",
-    "test": "npm run mocha"
+    "test": "NODE_ENV=test npm run mocha"
   },
   "author": "Lauri Junkkari",
   "license": "MIT",
@@ -16,7 +16,8 @@
     "eslint": "^4.8.0",
     "mocha": "^4.0.0",
     "prettier": "^1.7.4",
-    "prettier-eslint-cli": "^4.4.0"
+    "prettier-eslint-cli": "^4.4.0",
+    "sequelize-cli": "^3.0.0"
   },
   "dependencies": {
     "sequelize": "^4.13.2",

@@ -5,7 +5,7 @@ module.exports = (queryInterface, Sequelize) =>
     topCategoryId: {
       type: Sequelize.INTEGER,
       references: {
-        model: queryInterface.import("./ObjectTopCategory"),
+        model: queryInterface.import("./objecttopcategory"),
         key: "id"
       },
       allowNull: false

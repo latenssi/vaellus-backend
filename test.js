@@ -3,12 +3,7 @@
 const chai = require("chai");
 const expect = chai.expect;
 
-const sequelize = new (require("sequelize"))("database", null, null, {
-  dialect: "sqlite",
-  storage: "test-db.sqlite"
-});
-
-const models = require("./models")(sequelize);
+const models = require("./models");
 
 describe("Model creation", () => {
   beforeEach(async () => {

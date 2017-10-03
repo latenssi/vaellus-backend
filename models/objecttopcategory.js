@@ -5,7 +5,7 @@ module.exports = (queryInterface, Sequelize) =>
     hikeId: {
       type: Sequelize.INTEGER,
       references: {
-        model: queryInterface.import("./Hike"),
+        model: queryInterface.import("./hike"),
         key: "id"
       },
       allowNull: false
