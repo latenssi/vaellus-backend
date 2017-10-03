@@ -1,25 +1,21 @@
 "use strict";
 
-module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.import("./User");
-  const Hike = sequelize.import("./Hike");
-
-  return sequelize.define("HikeUser", {
+module.exports = (queryInterface, Sequelize) =>
+  queryInterface.define("HikeUser", {
     userId: {
-      type: DataTypes.INTEGER,
+      type: Sequelize.INTEGER,
       references: {
-        model: User,
+        model: queryInterface.import("./User"),
         key: "id"
       },
       allowNull: false
     },
     hikeId: {
-      type: DataTypes.INTEGER,
+      type: Sequelize.INTEGER,
       references: {
-        model: Hike,
+        model: queryInterface.import("./Hike"),
         key: "id"
       },
       allowNull: false
     }
   });
-};

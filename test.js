@@ -10,7 +10,7 @@ const sequelize = new (require("sequelize"))("database", null, null, {
 
 const models = require("./models")(sequelize);
 
-describe("Vaellus backend", () => {
+describe("Model creation", () => {
   beforeEach(async () => {
     await models.Object.sync({ force: true });
     await models.HikeUserObjectCategory.sync({ force: true });

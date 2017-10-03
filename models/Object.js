@@ -1,32 +1,29 @@
 "use strict";
 
-module.exports = (sequelize, DataTypes) => {
-  const ObjectSubCategory = sequelize.import("./ObjectSubCategory");
-
-  return sequelize.define("Object", {
+module.exports = (queryInterface, Sequelize) =>
+  queryInterface.define("Object", {
     categoryId: {
-      type: DataTypes.INTEGER,
+      type: Sequelize.INTEGER,
       references: {
-        model: ObjectSubCategory,
+        model: queryInterface.import("./ObjectSubCategory"),
         key: "id"
       },
       allowNull: false
     },
     name: {
-      type: DataTypes.STRING,
+      type: Sequelize.STRING,
       allowNull: false
     },
     mass: {
-      type: DataTypes.INTEGER,
+      type: Sequelize.INTEGER,
       allowNull: false
     },
     packed: {
-      type: DataTypes.BOOLEAN,
+      type: Sequelize.BOOLEAN,
       defaultValue: false
     },
     found: {
-      type: DataTypes.BOOLEAN,
+      type: Sequelize.BOOLEAN,
       defaultValue: false
     }
   });
-};

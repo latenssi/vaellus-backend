@@ -1,20 +1,17 @@
 "use strict";
 
-module.exports = (sequelize, DataTypes) => {
-  const Hike = sequelize.import("./Hike");
-
-  return sequelize.define("ObjectTopCategory", {
+module.exports = (queryInterface, Sequelize) =>
+  queryInterface.define("ObjectTopCategory", {
     hikeId: {
-      type: DataTypes.INTEGER,
+      type: Sequelize.INTEGER,
       references: {
-        model: Hike,
+        model: queryInterface.import("./Hike"),
         key: "id"
       },
       allowNull: false
     },
     name: {
-      type: DataTypes.STRING,
+      type: Sequelize.STRING,
       allowNull: false
     }
   });
-};

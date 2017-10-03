@@ -1,25 +1,21 @@
 "use strict";
 
-module.exports = (sequelize, DataTypes) => {
-  const ObjectSubCategory = sequelize.import("./ObjectSubCategory");
-  const HikeUser = sequelize.import("./HikeUser");
-
-  return sequelize.define("HikeUserObjectCategory", {
+module.exports = (queryInterface, Sequelize) =>
+  queryInterface.define("HikeUserObjectCategory", {
     categoryId: {
-      type: DataTypes.INTEGER,
+      type: Sequelize.INTEGER,
       references: {
-        model: ObjectSubCategory,
+        model: queryInterface.import("./ObjectSubCategory"),
         key: "id"
       },
       allowNull: false
     },
     hikeuserId: {
-      type: DataTypes.INTEGER,
+      type: Sequelize.INTEGER,
       references: {
-        model: HikeUser,
+        model: queryInterface.import("./HikeUser"),
         key: "id"
       },
       allowNull: false
     }
   });
-};

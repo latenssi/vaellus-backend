@@ -1,9 +1,9 @@
 "use strict";
 
-module.exports = (sequelize, DataTypes) =>
-  sequelize.define("User", {
+module.exports = (queryInterface, Sequelize) =>
+  queryInterface.define("User", {
     username: {
-      type: DataTypes.STRING,
+      type: Sequelize.STRING,
       allowNull: false
     }
   });
